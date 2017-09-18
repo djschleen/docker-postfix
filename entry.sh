@@ -14,10 +14,5 @@ if [ -z "$MYNETWORKS" ]; then
     echo "smtp >> Warning: MYNETWORKS not specified, allowing all private IPs"
 fi
 
-if [ -z "$REWRITE_MAIL_FROM" ]; then
-    postmap /etc/postfix/canonical
-    echo "postmap >> /etc/postfix/canonical"
-fi
-
 echo "Running command $@"
 exec "$@"

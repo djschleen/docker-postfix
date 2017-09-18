@@ -86,6 +86,8 @@ if [ -n "${REWRITE_MAIL_FROM}" ]; then
     echo "$REWRITE_MAIL_FROM   ${MAIL_FROM}" > canonical
     postconf -e canonical_maps="hash:/etc/postfix/canonical"
     postconf -e canonical_classes="$CANONICAL_CLASSES"
+    echo "postmap >> /etc/postfix/canonical"
+    postmap /etc/postfix/canonical
 fi
 # canonical_maps = hash:/etc/postfix/canonical
 # canonical_classes = envelope_sender
