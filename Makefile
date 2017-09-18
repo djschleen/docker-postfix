@@ -1,4 +1,5 @@
-docker_tag 	= panubo/postfix
+docker_tag 	= scsnowboards/docker-postfix
+version = 1.0.0
 
 build:
 	docker build -t $(docker_tag) .
